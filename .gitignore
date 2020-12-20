@@ -2,3 +2,15 @@
 00_disk/obj/linux64/Release/.compiler_flags
 
 *.d
+
+01_disk/obj/
+
+01_disk/bin/
+
+02_Planets/bin/
+
+02_Planets/obj/
+
+03_Particles/bin/
+
+03_Particles/obj/
