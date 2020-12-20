@@ -3,12 +3,16 @@
 #include "ofMain.h"
 
 class Particle {
-private:
-
 public:
-    Particle();
-    
+    double radius;
+    double lifeSpan;
 
+    ofVec2f position;
+    ofVec2f force;
+    ofVec2f v;
+    
+    ofColor color;
+    Particle();
 };
 
 #endif

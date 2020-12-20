@@ -4,12 +4,13 @@
 #include "LiveSys.h"
 #include "Emiter.h"
 #include "Particle.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 private:
 	
 public:
-	
+
 	//--------------------------------------------------------------
 
 	void setup();
@@ -27,5 +28,13 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+
+	// gui
+	// ofxIntSlider y;
+	// ofxIntSlider r;
+	// ofxPanel gui;
+
+	LiveSys liveSys;
+	double dt;
 	
 };
