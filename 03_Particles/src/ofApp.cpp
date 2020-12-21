@@ -27,14 +27,37 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 	ofEnableDepthTest();
+    liveSys.draw();
 
     // const
+
+    // Domek
+    double w, h, x, y;
+    h = 160;
+    w = 200;
+    x = ofGetWindowWidth()/2;
+    y = ofGetWindowHeight() - this->grass_height/2 - h;
+    // okno
+    h = 60;
+    w = 40;
+    ofSetColor(255, 255, 0);
+    ofDrawRectangle(x+w, y+40, w, h);
+    // "Ciało"
+    h = 160;
+    w = 200;
+    x = ofGetWindowWidth()/2;
+    y = ofGetWindowHeight() - this->grass_height/2 - h;
+    ofSetColor(31, 15, 0);
+    ofDrawRectangle(x, y, w, h);
+    // dach
+    ofSetColor(41, 13, 1);
+    ofDrawTriangle(x-50, y, x+w+50, y, x+w/2, y-h/2);
+    
     // trawa / grass
     ofSetColor(4, 26, 8);
-    ofDrawRectangle(0, ofGetWindowHeight()-60, ofGetWindowWidth(), 60);
+    ofDrawRectangle(0, ofGetWindowHeight()-this->grass_height, ofGetWindowWidth(), this->grass_height);
 
 
-    liveSys.draw();
 	// gui.draw();
 }
 

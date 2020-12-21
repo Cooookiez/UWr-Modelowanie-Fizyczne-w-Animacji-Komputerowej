@@ -4,7 +4,7 @@ Particle::Particle(ofVec2f position, ofVec2f v) {
     this->position = position;
     this->v = v;
     this->radius = 1;
-    this->lifeSpan = ofRandom(1.5, 3.5);
+    this->lifeSpan = ofRandom(2, 5);
     this->lifeLived = 0;
     this->color = {255, 255, 255};
 }

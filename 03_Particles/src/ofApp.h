@@ -36,5 +36,6 @@ public:
 
 	LiveSys liveSys;
 	double dt;
+	double grass_height = 60;
 	
 };

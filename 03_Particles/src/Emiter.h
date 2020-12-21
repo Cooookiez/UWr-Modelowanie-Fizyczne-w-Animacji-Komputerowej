@@ -8,7 +8,7 @@ public:
     const double V_START_MIN = 80;
     const double V_START_MAX = 100;
     const double DIRECTION_MAX_DEGREE = 60;
-    const double DEVATION_MAX_DEGREE = 15;
+    const double DEVATION_MAX_DEGREE = 20;
 
     int particlesPerSecond = 420;
 
