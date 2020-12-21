@@ -56,13 +56,14 @@ void ofApp::mouseMoved(int x, int y ){
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
 
-
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
 
-    liveSys.addEmiter(x-25, y-25, 50, 50);
+    int tmpW = 250;
+    int tmpH = 20;
+    liveSys.addEmiter(x-tmpW/2, y-tmpH/2, tmpW, tmpH);
 
 }
 

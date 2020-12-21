@@ -6,13 +6,15 @@ class Particle {
 public:
     double radius;
     double lifeSpan;
+    double lifeLived;
 
     ofVec2f position;
-    ofVec2f force;
     ofVec2f v;
-    
     ofColor color;
-    Particle();
+    
+    Particle(ofVec2f position, ofVec2f v);
+    void update(double dt);
+    void draw();
 };
 
 #endif
