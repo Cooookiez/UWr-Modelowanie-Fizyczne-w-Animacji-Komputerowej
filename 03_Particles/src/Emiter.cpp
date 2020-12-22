@@ -25,7 +25,7 @@ void Emiter::draw() {
     double r = 55;
     double x, y;
     ofSetColor(255, 255, 255, 80);
-    ofSetCircleResolution(16);
+    ofSetCircleResolution(64);
     // bottom layer
     y = this->position.y + this->height/2;
     // 1st
