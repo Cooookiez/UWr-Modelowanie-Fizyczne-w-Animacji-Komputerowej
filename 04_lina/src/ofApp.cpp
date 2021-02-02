@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	pointSize = 10;
+	pointSize = 5;
 	pointMass = 1;
     height = ofGetWindowHeight();
 }
@@ -20,7 +20,7 @@ void ofApp::update() {
 
     // Lines
     for (auto& connection : connections) {
-        connection->update(1100, points);
+        connection->update(420, points);
     }
 
     // Points (Velocity)
@@ -100,9 +100,13 @@ void ofApp::createLine(float x, float y, int numberOfPoints) {
 
     int curSize = points.size();
 
+    float dx = ofRandom(50, 60);
+    dx *= ofRandom(1) > .5 ? 1:-1;
+    float dy = ofRandom(-10, 20);
+
     points.push_back(new Point(point_last_id++, x, y, pointSize, pointMass, true));
     for (int i = 1; i < numberOfPoints; i++) {
-        points.push_back(new Point(point_last_id++, x + (i*50), y - (i*10), pointSize, pointMass, false));
+        points.push_back(new Point(point_last_id++, x + (i*dx), y - (i*dy), pointSize, pointMass, false));
     }
 
 
