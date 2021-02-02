@@ -12,7 +12,7 @@ Point::Point(int id, float x, float y, float size, float mass, bool isStatic = f
 }
 
 void Point::updateForces(float g, float height) {
-    forces.y = mass * g;
+    forces.y = mass * g * 10;
     forces.x = 0;
     if (posNow.y > height - size) {
         velocity.y = 0;

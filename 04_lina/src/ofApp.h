@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Point.h"
+#include "Connections.h"
 #include <ofVec2f.h>
 
 class ofApp : public ofBaseApp{
@@ -10,6 +11,7 @@ private:
 public:
 
 	vector<Point*> points;
+	vector<Connection*> connections;
 	float g = 9.81;
 	int point_last_id = 0;
 	float pointSize;

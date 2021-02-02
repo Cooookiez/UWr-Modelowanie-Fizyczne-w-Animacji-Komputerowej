@@ -4,14 +4,27 @@
 void ofApp::setup(){
 	pointSize = 10;
 	pointMass = 1;
-    height = 750;
+    height = ofGetWindowHeight();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-    deltaTime = ofGetElapsedTimef();
+    // deltaTime = ofGetElapsedTimef();
+    // deltaTime /= 10;
+    deltaTime = .025; // jedyna warto gdzie sie ni psuło
+
+    // Points (Gravity)
     for (auto& point : points) {
         point->updateForces(g, height);
+    }
+
+    // Lines
+    for (auto& connection : connections) {
+        connection->update(1100, points);
+    }
+
+    // Points (Velocity)
+    for (auto& point : points) {
         point->updateWithVelocity(deltaTime);
     }
 }
@@ -84,8 +97,17 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //--------------------------------------------------------------
 void ofApp::createLine(float x, float y, int numberOfPoints) {
+
+    int curSize = points.size();
+
     points.push_back(new Point(point_last_id++, x, y, pointSize, pointMass, true));
     for (int i = 1; i < numberOfPoints; i++) {
         points.push_back(new Point(point_last_id++, x + (i*50), y - (i*10), pointSize, pointMass, false));
     }
+
+
+    for (int i = 0; i < numberOfPoints-1; i++) {
+        connections.push_back(new Connection(curSize + i, curSize + 1 + i, points));
+    }
+
 }
