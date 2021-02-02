@@ -36,6 +36,14 @@ void ofApp::draw() {
         ofSetColor(point->getColor());
         ofDrawCircle(point->posNow, point->size);
     }
+    // draw lines between points
+	ofSetColor(200, 200, 200);
+	ofSetLineWidth(3);
+    for (auto const& connection : connections) {
+        ofVec2f pos1 = points[connection->index1]->posNow;
+        ofVec2f pos2 = points[connection->index2]->posNow;
+        ofDrawLine(pos1, pos2);
+    }
 }
 
 //--------------------------------------------------------------
